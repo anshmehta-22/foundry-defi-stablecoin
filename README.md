@@ -111,7 +111,7 @@ function liquidate(address collateral, address user, uint256 debtToCover)
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/foundry-defi-stablecoin
+git clone https://github.com/anshmehta-22/foundry-defi-stablecoin
 cd foundry-defi-stablecoin
 ```
 
@@ -127,7 +127,7 @@ forge install
 forge build
 ```
 
-## 🧪 Testing
+## Testing
 
 This project includes comprehensive test suites:
 
@@ -245,7 +245,7 @@ Contributions are welcome! Please follow these steps:
 5. Open a Pull Request
 
 
-## 📚 Learning Resources
+## Learning Resources
 
 This project demonstrates:
 

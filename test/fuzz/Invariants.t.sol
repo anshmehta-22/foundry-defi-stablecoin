@@ -18,7 +18,7 @@ import {HelperConfig} from "../../script/HelperConfig.s.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {Handler} from "./Handler.t.sol";
 
-contract Invariants is StdInvariant, Test{
+contract Invariants is StdInvariant, Test {
     DeployDSC deployer;
     DSCEngine dsce;
     DecentralizedStableCoin dsc;
@@ -36,7 +36,7 @@ contract Invariants is StdInvariant, Test{
         targetContract(address(handler));
     }
 
-    function invariant_protocolMustHaveMoreValueThanTotalSupply() public view{
+    function invariant_protocolMustHaveMoreValueThanTotalSupply() public view {
         //get the value of all the collateral in the protocol
         //compare it to all the debt (dsc)
         uint256 totalSupply = dsc.totalSupply();
@@ -53,10 +53,9 @@ contract Invariants is StdInvariant, Test{
         console.log("Times mint is called: ", handler.timesMintIsCalled());
 
         assert(wethValue + wbtcValue >= totalSupply);
-
     }
 
-    function invariant_gettersShouldNotRevert() public view{
+    function invariant_gettersShouldNotRevert() public view {
         dsce.getUsdValue(weth, 1e18);
         dsce.getTokenAmountFromUsd(weth, 1000e18);
         dsce.getHealthFactor(msg.sender);
@@ -65,6 +64,4 @@ contract Invariants is StdInvariant, Test{
         dsce.getAccountInformation(msg.sender);
         dsce.getAccountCollateralValueInUsd(msg.sender);
     }
-    
 }
-
